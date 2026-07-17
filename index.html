@@ -1,0 +1,14 @@
+const CW_DATA = (() => {
+  const first = ['Nova','Iron','Neon','Crimson','Solar','Night','Storm','Frost','Titan','Viper','Echo','Onyx','Blaze','Atlas','Velvet','Riot','Cyber','Thunder','Ember','Phantom','Sky','Zero','Luna','Chrome','Wild'];
+  const last = ['Valkyrie','Colossus','Striker','Rose','Rex','Scorpion','Eagle','Empress','Giant','Mirage','Slam','Heart','Fury','Shade','Dynamo','Tempest','Oracle','Crusher','Comet','Warden'];
+  const rarities = [
+    ['Gewöhnlich','#9aa0aa',1],['Ungewöhnlich','#38d987',1.08],['Selten','#4dc7ff',1.16],['Besonders selten','#3575ff',1.25],['Ultra selten','#a653ff',1.36],['Episch','#ff8a38',1.5],['Legendär','#f4c542',1.7],['Champion','#ff3e45',1.95],['Mythic','#7b35c9',2.2],['Immortal','#d8ae5a',2.5]
+  ];
+  const wrestlers = Array.from({length:50},(_,i)=>({
+    id:`w${i+1}`, ringName:`${first[i%first.length]} ${last[(i*7)%last.length]}`, realName:`${['Alex','Jordan','Sam','Robin','Taylor','Morgan'][i%6]} Vale`, gender:i%2?'Weiblich':'Männlich', age:22+(i%19), height:165+(i%34), weight:62+(i%66), origin:['Nova City','Ironhaven','Solara','Northpoint','Mirage Bay'][i%5], style:['Powerhouse','Highflyer','Techniker','Brawler','Entertainer'][i%5], alignment:['Face','Heel','Neutral'][i%3], finisher:['Final Orbit','Neon Crash','Titan Breaker','Skyfall Lock','Crimson Pulse'][i%5], signature:['Comet Kick','Steel Clutch','Zero-G Slam','Flash Driver'][i%4], faction:['Solar Syndicate','Night Circuit','Iron Pact','Wild Hearts'][i%4], status:i%13===0?'Legende':'Aktiv'
+  }));
+  const cards = wrestlers.map((w,i)=>{const r=i%10, base=44+i%22, m=rarities[r][2]; return {id:`c${i+1}`,wrestlerId:w.id,name:w.ringName,gender:w.gender,rarity:r,level:1+(i*7)%100,stars:i%5+1,series:i%3?'Genesis':'Arena Zero',season:1,pro:false,xp:0,stats:{power:Math.round((base+8)*m),speed:Math.round((base+(i%12))*m),technique:Math.round((base+4)*m),stamina:Math.round((base+10)*m),charisma:Math.round((base+(i%15))*m)}}});
+  const packs=[['Gratispack',0,'Alle 4 Stunden',2],['Basic Pack',500,'3 Karten',3],['Rare Pack',1250,'3 Karten · Selten+',4],['Elite Pack',75,'4 Karten · Ultra selten+',5],['Champion Pack',180,'5 Karten · Champion-Chance',7],['Fusion Pack',900,'Material & Wrestler',4]].map((p,i)=>({id:`p${i}`,name:p[0],price:p[1],desc:p[2],max:p[3]}));
+  const missions=['Gewinne 3 Matches','Öffne ein Pack','Trainiere eine Karte','Führe eine Fusion durch','Decke 10 Draft-Felder auf','Erstelle ein Deck','Gewinne ohne Niederlage','Sammle 3 neue Karten','Nutze einen Highflyer','Bearbeite dein Profil'];
+  return {rarities,wrestlers,cards,packs,missions,nav:[['home','Übersicht','⌂'],['play','Spielen','⚔'],['cards','Meine Karten','▣'],['deck','Deck','▤'],['packs','Packs','◆'],['draft','Draft Board','▦'],['fusion','Fusion','◎'],['training','Training','↟'],['missions','Missionen','✓'],['suggestions','Vorschläge','✦'],['profile','Profil','●'],['settings','Einstellungen','⚙']]};
+})();
