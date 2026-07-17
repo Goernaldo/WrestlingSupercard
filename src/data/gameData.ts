@@ -1,0 +1,4 @@
+import type { Mission } from '../types/game';
+export const missions:Mission[]=[{id:'daily-match',title:'Bestreite 3 Matches',kind:'Täglich',progress:1,target:3,reward:'250 Gold',claimed:false},{id:'daily-pack',title:'Öffne ein Pack',kind:'Täglich',progress:1,target:1,reward:'1 Ticket',claimed:false},{id:'weekly-win',title:'Gewinne 10 Matches',kind:'Wöchentlich',progress:4,target:10,reward:'Gold Pack',claimed:false}];
+export const packs=[['Starter Pack',0,'3 Karten'],['Bronze Pack',250,'2 Karten'],['Silver Pack',600,'3 Karten'],['Gold Pack',1200,'4 Karten'],['Champion Pack',2500,'5 Karten']] as const;
+export const navItems=[['Home','/home'],['Sammlung','/collection'],['Packs','/packs'],['Spielen','/match'],['Draft Board','/draft-board'],['Fusion','/fusion'],['Missionen','/missions'],['Events','/events'],['Shop','/shop'],['Profil','/profile'],['Einstellungen','/settings'],['Admin Center','/admin']] as const;

@@ -1,0 +1,2 @@
+import {StrictMode} from 'react';import{createRoot}from'react-dom/client';import{BrowserRouter}from'react-router-dom';import{GameProvider}from'./context/GameContext';import App from'./App';import'./styles/variables.css';import'./styles/base.css';import'./styles/animations.css';import'./styles/theme.css';import'./styles/responsive.css';
+createRoot(document.getElementById('root')!).render(<StrictMode><BrowserRouter><GameProvider><App/></GameProvider></BrowserRouter></StrictMode>);

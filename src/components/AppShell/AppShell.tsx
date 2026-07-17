@@ -1,0 +1,2 @@
+import {Outlet} from 'react-router-dom';import {Topbar} from '../Topbar/Topbar';import {Sidebar} from '../Sidebar/Sidebar';import {BottomBar} from '../BottomBar/BottomBar';import styles from './AppShell.module.css';
+export function AppShell(){return <div className={styles.shell}><Topbar/><Sidebar/><main><Outlet/></main><aside className={styles.right}><h3>ARENA LIVE</h3><p>8.421 Kämpfer online</p><hr/><h3>NÄCHSTES EVENT</h3><p>Night of Titans · 02:14:38</p><hr/><h3>FREUNDE</h3><p>3 online · 12 gesamt</p></aside><BottomBar/></div>}

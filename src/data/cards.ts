@@ -1,0 +1,4 @@
+import type { WrestlerCard } from '../types/game';
+export const demoCards:WrestlerCard[]=[
+ ['inferno','Inferno','The Firestarter','Legendary',92,83,78,86,88],['blackout','Blackout','Lights Out','Epic',85,91,89,79,84],['titan','The Titan','Unbreakable','Champion',94,96,72,93,80],['frost','Frost Vanguard','Cold Front','Ultra Rare',82,87,91,88,75],['viper','Neon Viper','High Voltage','Mythic',90,78,94,81,93],['reaper','Shadow Reaper','Final Bell','Event',88,84,92,86,95]
+].map(([id,name,nickname,rarity,a,d,t,s,c],i)=>({id:`card-${id}`,wrestlerId:String(id),name:String(name),nickname:String(nickname),rarity:rarity as WrestlerCard['rarity'],level:10+i,maxLevel:50,stars:3+i%3,attack:+a,defense:+d,technique:+t,stamina:+s,charisma:+c,overall:Math.round((+a + +d + +t + +s + +c)/5),imagePath:'placeholder',frame:String(rarity).toLowerCase().replace(' ','-'),locked:i===2,favorite:i===0,championVersion:rarity==='Champion',eventVersion:rarity==='Event'}));

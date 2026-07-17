@@ -1,0 +1,2 @@
+.bar{display:none;position:fixed;bottom:0;left:0;right:0;height:58px;background:#090c10;border-top:1px solid #414955;z-index:20;justify-content:space-around;align-items:center}.bar a{color:#c6ccd4;text-decoration:none;font-size:.65rem;text-transform:uppercase;font-weight:800}
+@media(max-width:800px){.bar{display:flex}}

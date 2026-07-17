@@ -1,0 +1,2 @@
+import {NavLink} from 'react-router-dom';import {navItems} from '../../data/gameData';import {useGame} from '../../context/GameContext';import styles from './Sidebar.module.css';
+export function Sidebar(){const {state}=useGame();return <aside className={styles.sidebar}><nav>{navItems.filter(([n])=>n!=='Admin Center'||['Owner','Admin'].includes(state.profile.role)).map(([n,p])=><NavLink key={p} to={p} className={({isActive})=>isActive?styles.active:''}>{n}</NavLink>)}</nav><div><small>SAISON 1</small><b>Alpha Division</b><progress value="62" max="100"/></div></aside>}

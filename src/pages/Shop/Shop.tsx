@@ -1,0 +1,2 @@
+import{Panel}from'../../components/Panel/Panel';import{UiButton}from'../../components/UiButton/UiButton';
+export function Shop(){return <div><div className="page-heading"><div><span className="tag">Arena Shop</span><h1>Shop <span>Demo</span></h1></div></div><div className="grid">{['Gold-Bundle','Diamant-Bundle','Energie-Refill'].map(x=><Panel key={x} title={x} eyebrow="Platzhalter"><p>Dieser Shop-Artikel folgt in Version 0.2.</p><UiButton disabled>Demnächst</UiButton></Panel>)}</div></div>}
