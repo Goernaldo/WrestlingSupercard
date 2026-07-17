@@ -31,7 +31,7 @@ function homeHUD(){
     <nav class="hud-left-nav" aria-label="Hauptnavigation">${nav.map((n,i)=>`<button data-page="${n[0]}" class="hud-nav-item ${i===0?'active':''}"><i>${n[1]}</i><b>${n[2]}</b>${n[3]?`<span class="hud-nav-badge ${n[3]==='NEW'?'new':''}">${n[3]}</span>`:''}</button>`).join('')}</nav>
     <main class="hud-stage">
       <div class="hud-arena"></div><div class="hud-stage-shade"></div>
-      <div class="hud-fighters" aria-label="Inferno, Blackout und The Titan"><img class="hud-fighter inferno" src="assets/wrestlers/male/inferno/master.png" alt="Inferno"><img class="hud-fighter blackout" src="assets/wrestlers/male/blackout/master.png" alt="Blackout"><img class="hud-fighter titan" src="assets/wrestlers/male/the-titan/master.png" alt="The Titan"></div>
+      <div class="hud-fighters" aria-label="Inferno, Blackout und The Titan"><img class="hud-fighter inferno" src="assets/ui/hud/inferno.webp" alt="Inferno"><img class="hud-fighter blackout" src="assets/ui/hud/blackout.webp" alt="Blackout"><img class="hud-fighter titan" src="assets/ui/hud/the-titan.webp" alt="The Titan"></div>
       <div class="quick-action-menu">${quick.map((q,i)=>`<button data-page="${q[0]}" class="quick-action-card ${q[3]} ${i===2?'primary-action':''}"><i>${q[1]}</i><b>${q[2]}</b></button>`).join('')}</div>
     </main>
     <aside class="right-info-rail">
